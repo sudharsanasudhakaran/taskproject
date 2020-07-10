@@ -1,8 +1,31 @@
-<div class= "col-lg-3">
-    <div class = "container leftbox">
-        <button type="button" class="btn btn-primary" id = "adddays" (click) = "adddays()">Add Days</button>
-        <h5 *ngFor = "let day of days">
-            <button type="button" class="btn btn-secondary" id = "{{day}}" (click) = "newtopic()">Day {{day}}</button>
-        </h5>
+<div class= "container">
+    <div class = "row">
+        <div class= "col-lg-3">
+            <div class = "container fluid">
+                <button type="button" class="btn btn-primary" id = "adddays" (click) = "adddays()">Add Days</button>
+                <li class = "list-group-item" *ngFor = "let day of days"> {{day.name}}</li>
+            </div>
+        </div>
+       
+        <div class= "col-lg-3">
+            <div class = "container leftbox">
+              <button type="button" class="btn btn-primary" id = "adddays" (click) = "addtask()">Add Tasks</button>
+              <h5 *ngFor = "let task of tasks">
+                 <button type="button" class="btn btn-secondary" id = "{{task}}" (click) = "addtopic()">Task{{task}}</button>
+               </h5>
+            </div>
+        </div>    
+        
+    <div class= "col-lg-6">
+        <div class = "container leftbox">
+            <form>
+                <div class="form-group">
+                  <label for="tasks">Enter task</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your tasks..">
+                </div>
+            </form>
+            
+        </div>
+    </div>
     </div>
 </div>
